@@ -47,3 +47,29 @@ td {
 tr:nth-child(even) td {
     background-color: #f9f9f9;
 }
+
+.search-container {
+    margin: 20px;
+    text-align: center;
+}
+
+#searchInput {
+    padding: 10px;
+    width: 200px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchButton {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+#searchButton:hover {
+    background-color: #aaa;
+}
