@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clan Agar.io</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Formulario de Login -->
+    <div class="form-container">
+        <form id="loginForm">
+            <label for="username">User</label><br>
+            <input type="text" id="username" required><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="error" class="hidden" style="color: red;">What are you trying? lol</p>
+    </div>
+
+    <!-- Lista de jugadores (oculta por defecto) -->
+    <div id="membersList" class="hidden">
+        <h2>Clan members</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Instagram</th>
+                <th>Rank</th>
+                <th>Active</th>
+            </tr>
+            <tr>
+                <td>Bido</td>
+                <td>@bido_idoo</td>
+                <td>Owner</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Flash</td>
+                <td>@flashxeds</td>
+                <td>Admin</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Camilo</td>
+                <td>@camilo.660</td>
+                <td>Admin</td>
+                <td>Yes</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Definir el usuario y contraseña que has escogido
+        const validUsername = 'hpclan';
+        const validPassword = 'hpclan123';
+
+        // Capturar el formulario de login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener los valores ingresados por el usuario
+            const username = document.getElementById('username').value; 
+            const password = document.getElementById('password').value;
+
+            // Validar el usuario y contraseña
+            if (username === validUsername && password === validPassword) {
+                document.getElementById('membersList').classList.remove('hidden'); // Mostrar la lista de miembros
+                document.getElementById('loginForm').classList.add('hidden'); // Ocultar el formulario de login
+            } else {
+                document.getElementById('error').classList.remove('hidden'); // Mostrar mensaje de error
+            }
+        });
+    </script>
+
+</body>
+
+<video autoplay muted loop id="bgVideo">
+    <source src="background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+</html>
