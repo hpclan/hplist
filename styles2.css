@@ -1,0 +1,137 @@
+#bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Asegura que el video esté detrás de todo el contenido */
+    object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.menu-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.menu-btn {
+    background-color: #ee0c0c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.menu-btn:hover {
+    background-color: #555;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: rgb(235, 76, 76);
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 150px;
+}
+
+.menu a {
+    display: block;
+    padding: 12px;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu a:hover {
+    background-color: #f1f1f1;
+}
+
+#about {
+    background-color: rgba(255, 255, 255, 0.767);
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+#tks {
+    background-color: rgba(255, 255, 255, 0.767);
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+#tks-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tks-item {
+    width: 300px;  /* Ajusta el tamaño que desees para las imágenes y videos */
+    height: 200px;
+    object-fit: cover; /* Hace que las imágenes/videos se adapten al contenedor sin deformarse */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s; /* Efecto de animación */
+}
+
+.tks-item:hover {
+    transform: scale(1.05); /* Zoom al pasar el ratón */
+}
+
+#contact {
+    background-color: rgba(255, 255, 255, 0.767);
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 20px auto;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    
+}
+
+.social-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px; /* Espacio entre los iconos */
+}
+
+.social-buttons a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.social-icon {
+    width: 25px; /* Tamaño del icono */
+    height: 25px;
+    transition: transform 0.3s; /* Efecto al pasar el mouse */
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Efecto de aumento al pasar el mouse */
+}
