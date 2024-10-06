@@ -20,9 +20,6 @@
         <p id="error" class="hidden" style="color: red;">What are you trying? lol</p>
     </div>
 
-    <div class="search-container" class="hidden">
-        <input type="text" id="searchInput" placeholder="Search for player...">
-        <button id="searchButton">🔍</button>
 
     <!-- Lista de jugadores (oculta por defecto) -->
     <div id="membersList" class="hidden">
@@ -33,6 +30,7 @@
                 <th>Instagram</th>
                 <th>Rank</th>
                 <th>Active</th>
+                <th>Stats</th>
             </tr>
             <tr>
                 <td>Bido</td>
@@ -51,15 +49,30 @@
                 <td>@camilo.660</td>
                 <td>Admin</td>
                 <td>Yes</td>
+                <td><img src="camilostats.jpeg" class="player-stats" alt="Camilo Stats"></td>
+            </tr>
+            <tr>
+                <td>Logic</td>
+                <td>@log1c.io</td>
+                <td>Admin</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Nami</td>
+                <td>@nami.io09</td>
+                <td>Member</td>
+                <td>Yes</td>
+                <td><img src="namistats.jpeg" class="player-stats" alt="Nami Stats"></td>
             </tr>
         </table>
     </div>
+
 
     <script>
         // Definir el usuario y contraseña que has escogido
         const validUsername = 'hpclan';
         const validPassword = 'hpclan123';
-
+    
         // Capturar el formulario de login
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -67,11 +80,12 @@
             // Obtener los valores ingresados por el usuario
             const username = document.getElementById('username').value; 
             const password = document.getElementById('password').value;
-
+    
             // Validar el usuario y contraseña
             if (username === validUsername && password === validPassword) {
                 document.getElementById('membersList').classList.remove('hidden'); // Mostrar la lista de miembros
                 document.getElementById('loginForm').classList.add('hidden'); // Ocultar el formulario de login
+                document.getElementById('searchContainer').classList.remove('hidden'); // Mostrar la barra de búsqueda
             } else {
                 document.getElementById('error').classList.remove('hidden'); // Mostrar mensaje de error
             }
@@ -79,6 +93,34 @@
     </script>
 
  <script src="script.js"></script>
+
+    <div id="zoomModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="zoomedImage">
+    </div>
+
+    <script>
+    // JavaScript para manejar el zoom de las imágenes
+    var modal = document.getElementById("zoomModal");
+    var modalImg = document.getElementById("zoomedImage");
+
+// Todas las imágenes de estadísticas de los jugadores
+    var statsImages = document.querySelectorAll('.player-stats');
+
+// Abrir el modal al hacer clic en cualquier imagen
+    statsImages.forEach(function(img) {
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+    }
+});
+
+// Cerrar el modal al hacer clic en la 'X'
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() { 
+        modal.style.display = "none";
+}
+    </script>
 
 </body>
 
