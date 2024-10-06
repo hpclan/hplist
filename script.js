@@ -45,7 +45,29 @@ document.getElementById('searchButton').addEventListener('click', function() {
     }
 
     if (!found) {
-        alert('Player not found.');
+        alert('Jugador no encontrado.');
     }
 });
+
+
+var modal = document.getElementById("zoomModal");
+var modalImg = document.getElementById("zoomedImage");
+
+// Todas las imágenes de estadísticas de los jugadores
+var statsImages = document.querySelectorAll('.player-stats');
+
+// Abrir el modal al hacer clic en cualquier imagen
+statsImages.forEach(function(img) {
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+    }
+});
+
+// Cerrar el modal al hacer clic en la 'X'
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+
     
