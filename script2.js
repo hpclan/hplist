@@ -1,3 +1,10 @@
+window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelector('.loader-wrapper').style.display = 'none';
+      document.querySelector('.content').style.display = 'block';
+    }, 3000);
+  });
+
 function toggleMenu() {
     var menu = document.getElementById("dropdown");
     if (menu.style.display === "block") {
